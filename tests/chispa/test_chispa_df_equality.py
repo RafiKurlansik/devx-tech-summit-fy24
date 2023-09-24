@@ -3,7 +3,7 @@ import pyspark.sql.functions as F
 from pyspark.sql import SparkSession
 from chispa import *
 from chispa.dataframe_comparer import *
-from covid_analysis.transforms_spark import remove_non_word_characters
+from src.transforms_spark import remove_non_word_characters
 
 spark = SparkSession.builder.getOrCreate()
 
