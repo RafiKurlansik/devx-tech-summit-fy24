@@ -30,3 +30,5 @@ def test_remove_non_word_characters():
           (None, None)
       ]
     expected_df = spark.createDataFrame(expected_data, ["name", "clean_name"])
+
+    assertDataFrameEqual(clean_df, expected_df)

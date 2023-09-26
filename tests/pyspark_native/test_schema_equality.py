@@ -16,12 +16,12 @@ def test_schema_mismatch():
     
     # DF with only numeric columns
     data2 = [
-        (1, "d"),
-        (2, "e"),
-        (3, "f"),
+        (1, 88.8),
+        (2, 99.9),
+        (3, 1000.1),
         (None, None)
     ]
-    df2 = spark.createDataFrame(data2, ["num", "letter"])
+    df2 = spark.createDataFrame(data2, ["num", "double"])
     
     # Compare them
-    assertSchemaEqual(s1, s2)
+    assertSchemaEqual(df1.schema, df2.schema)
